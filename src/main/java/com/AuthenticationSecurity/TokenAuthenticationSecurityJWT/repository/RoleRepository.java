@@ -1,4 +1,13 @@
 package com.AuthenticationSecurity.TokenAuthenticationSecurityJWT.repository;
 
-public class RoleRepository {
+import com.AuthenticationSecurity.TokenAuthenticationSecurityJWT.models.ERole;
+import com.AuthenticationSecurity.TokenAuthenticationSecurityJWT.models.Role;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface RoleRepository extends JpaRepository<Role, Long> {
+    Optional<Role> findByName(ERole name);
 }
